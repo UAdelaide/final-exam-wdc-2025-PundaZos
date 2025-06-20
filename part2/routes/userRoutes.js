@@ -64,7 +64,7 @@ router.post('/login', async (req,red) => {
     const[result]=await db.query(query, [username,password]);
     return;
   }
-  
+
   const userRecord = result[0];
 
   req.session.user = {
@@ -72,7 +72,7 @@ router.post('/login', async (req,red) => {
     username:userRecord.username,
     role:userRole.role
   };
-
+  res.json()
 });
 
 module.exports = router;
