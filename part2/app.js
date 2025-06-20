@@ -5,7 +5,12 @@ require('dotenv').config();
 const app = express();
 
 //Login support
-
+const session = require('express-session');
+app.use(session({
+  secret: 'dogsecret',
+  resave: false,
+  saveUninitialized: true,
+}));
 
 // Middleware
 app.use(express.json());
