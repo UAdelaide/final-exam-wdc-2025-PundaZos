@@ -4,7 +4,6 @@ const mysql = require('mysql2/promise');
 const app = express();
 const PORT = 3000;
 
-// Database connection config
 const dbConfig = {
   host: 'localhost',
   user: 'root',
@@ -12,7 +11,7 @@ const dbConfig = {
   database: 'DogWalkService'
 };
 
-// Connect to database and insert test data
+// Connect database, insert data
 async function initializeDatabase() {
   const connection = await mysql.createConnection(dbConfig);
 
