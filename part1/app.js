@@ -40,6 +40,7 @@ async function initializeDatabase(){
             ((SELECT dog_id FROM Dogs WHERE name = 'Bella'), '2025-06-10 09:30:00', 45, 'Beachside Ave', 'accepted'),`)
         await connection.end();
         console.log('Databse initialised');
-    }
+    } catch (error) {
+        console.error('Error:')
     }
 }
