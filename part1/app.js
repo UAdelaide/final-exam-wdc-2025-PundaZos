@@ -87,7 +87,9 @@ app.get('/api/walkers/summary', async(req,res) => {
             COUNT(r.rating_id) AS total_ratings,
             AVG(r.rating) AS average_rating,
             (
-                SELECT COUNT())`);
+                SELECT COUNT(*)
+                FROM WalkRequests wr
+                JOIN WalkApplication)`);
         await connection.end();
         res.json(rows);
     } catch (error){
