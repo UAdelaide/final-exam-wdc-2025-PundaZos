@@ -13,18 +13,6 @@
     <h1 class="mb-4 text-primary">Welcome to the Dog Walking Service!</h1>
 
     <!--Login-->
-  <form @submit.prevent="login" class="mb-4">
-    <div class="mb-3">
-    <label class="form-label">Username</label>
-    <input v-model="username" class="form-control" />
-    </div>
-    <div class="mb-3">
-    <label class="form-label">Password</label>
-    <input type="password" v-model="password" class="form-control" />
-    </div>
-    <button type="submit" class="btn btn-primary">Log In</button>
-    <p class="text-danger mt-2" v-if="error">{{ error }}</p>
-  </form>
 
     <a href="owner-dashboard.html" class="btn btn-outline-primary me-2">Owner Dashboard</a>
     <a href="walker-dashboard.html" class="btn btn-outline-success">Walker Dashboard</a>
