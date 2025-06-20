@@ -56,24 +56,7 @@
               password:this.password
             })
           });
-          if(!res.ok){
-            this.loginError='Incorrect credentials';
-            return;
-          }
-          const result=await response.json();
-          switch (result.role){
-            case 'owner': window.location.href = '/owner-dashboard.html';
-              break;
-            case 'walker':window.localStorage.href = '/walker-dashboard.html';
-              break;
-            default:this.loginError='Unknown user';
-          }
-        } catch (error) {
-          this.loginError='Unable to connect';
-        }
-      }
-    })
-  app.mount('#app');
+
   </script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
