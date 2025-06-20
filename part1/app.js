@@ -17,8 +17,8 @@ async function initializeDatabase(){
 
     try{
         await connection.excute('DELETE FROM WalkRatings');
-        await connection.excute('')
-        await connection.excute
+        await connection.excute('DELETE FROM WalkApplications')
+        await connection.excute('DELETE FROM WalkRequests')
         await connection.excute
         await connection.excute
         await connection.excute
