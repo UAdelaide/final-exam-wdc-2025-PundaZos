@@ -74,7 +74,8 @@ router.post('/login', async (req,red) => {
     role:userRole.role
   };
   res.json(req.session.user);
-}
+} catch(error){
+  res
 });
 
 module.exports = router;
