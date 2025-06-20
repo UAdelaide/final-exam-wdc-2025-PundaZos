@@ -43,8 +43,10 @@
             })
           });
           if (!res.ok){
-            this.error
+            this.error = 'Invalid username or password';
+            return;
           }
+          const data = 
         }
       }
     }
