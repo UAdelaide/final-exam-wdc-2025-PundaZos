@@ -63,7 +63,7 @@ router.post('/login', async (req,red) => {
     const query = 'SELECT * FROM Users WHERE username = ? AND password_has = ?';
     const[result]=await db.query(query, [username,password]);
     if(!result.length){
-      
+      res.status(401).json({error:})
     }
   }
 
