@@ -42,7 +42,10 @@
     methods:{
       this.loginError='';
       try{
-        const response=await fetch('api/')
+        const response=await fetch('api/users/login', {
+          method: 'POST',
+          headers
+        })
       }
     }
   </script>
