@@ -54,6 +54,8 @@ router.post('/login',async (req,res) => {
       role:rows[0].role
     };
     res.json(req.session.user); //this one sends back to fornt end
+  } catch (error) {
+    
   }
 })
 
