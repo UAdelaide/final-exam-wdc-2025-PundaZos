@@ -6,11 +6,10 @@ const app = express();
 
 //Login support
 const session = require('express-session');
-
 app.use(session({
-    secret:'dog-secret',
-    resave:false,
-    saveUninitialized:true
+  secret: 'dogsecret',
+  resave: false,
+  saveUninitialized: true,
 }));
 
 // Middleware
