@@ -9,4 +9,4 @@ const dbConfig = {
     user: 'root',
     password: '',
     database: 'DogWalkService'
-}
+};
