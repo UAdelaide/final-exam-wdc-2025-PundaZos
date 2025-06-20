@@ -54,8 +54,10 @@
           })
         });
         if(!response.ok){
-          this.loginError=''
+          this.loginError='Incorrect credentials';
+          return;
         }
+        const result=
       }
     }
   </script>
