@@ -60,10 +60,10 @@
         const result=await response.json();
         switch (result.role){
           case 'owner': window.location.href = '/owner-dashboard.html';
-          break;
+            break;
           case 'walker':window.localStorage.href = '/walker-dashboard.html';
-          break;
-          default
+            break;
+          default:this.loginError=''
         }
       }
     }
