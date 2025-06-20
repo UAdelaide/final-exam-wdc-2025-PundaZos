@@ -42,7 +42,8 @@ router.post('/login',async (req,res) => {
     const[rows] = await db.query(
       'SELECT * FROM username = ? AND password_hash = ?',
       [username, password]
-    )
+    );
+    if (rows.length === 0)
   }
 })
 
