@@ -62,7 +62,9 @@ router.post('/login', async (req,red) => {
   try{
     const query = 'SELECT * FROM Users WHERE username = ? AND password_has = ?';
     const[result]=await db.query(query, [username,password]);
+    return;
   }
+  const userRecord = result[0]
 });
 
 module.exports = router;
