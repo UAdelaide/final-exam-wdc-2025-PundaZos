@@ -52,9 +52,9 @@
           } else if (data.role === 'walker'){
             window.location.href='walker-fashboard.html';
           }else{
-            this.error = '';
+            this.error = 'No role!';
           }
-          }
+          } catch (err) {}
         }
       }
     }
