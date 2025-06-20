@@ -23,7 +23,7 @@
         <input type="password" v-model="password" class="form-control"/>
       </div>
       <button type="submit" class="btn btn-primary">Log In</button>
-      <div class="text-danger my-2" v-if="loginError">{{loginError}}</div>
+      <div class="text-danger mt-2" v-if="error">{{error}}</div>
     </form>
 
     <a href="owner-dashboard.html" class="btn btn-outline-primary me-2">Owner Dashboard</a>
