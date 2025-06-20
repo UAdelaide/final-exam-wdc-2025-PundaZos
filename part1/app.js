@@ -77,4 +77,15 @@ app.get('/api/walkrequests/open', async(req,res) => {
     }
 });
 
-// api walkers
+// api/walkers/summary
+app.get('/api/walkers/summary', async(req,res) => {
+    try {
+        const connection = await mysql.createConnection(dbConfig);
+        const [rows] = await connection.excute(`
+            SELECT`);
+        await connection.end();
+        res.json(rows);
+    } catch (error){
+        res.status(500).json({error: 'Failed fetch dogs' });
+    }
+});
