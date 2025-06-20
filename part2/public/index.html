@@ -59,7 +59,7 @@
           this.loginError='Incorrect credentials';
           return;
         }
-        const result=await res.json();
+        const result=await response.json();
         switch (result.role){
           case 'owner': window.location.href = '/owner-dashboard.html';
             break;
@@ -71,7 +71,7 @@
         this.loginError='Unable to connect';
       };
     }
-.mount('#app');
+  app.mount('#app');
   </script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
