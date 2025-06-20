@@ -6,6 +6,7 @@ const app = express();
 
 //Login support
 const session = require('express-session');
+
 app.use(session({
   secret: 'dogsecret',
   resave: false,
