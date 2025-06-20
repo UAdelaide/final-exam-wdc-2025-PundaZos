@@ -39,7 +39,7 @@
   <script>
     const { createApp, ref, onMounted } = Vue;
     async function getCurrentUser() {
-      const res = await fetch('/api/users/
+      const res = await fetch('/api/users/me')
     }
 
     createApp({
