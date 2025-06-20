@@ -12,4 +12,6 @@ const dbConfig = {
 };
 
 // connect database
-async function ini
+async function initializeDatabase(){
+    const 
+}
