@@ -130,7 +130,8 @@
       }
     }).mount('#app');
     document.getElementById('logout').onclick = async function() {
-      await fetch('/api/users/'')
+      await fetch('/api/users/logout',{ method: 'POST' });
+      
     };
   </script>
 
