@@ -20,12 +20,12 @@
       </div>
       <div class="mb-3">
         <label class="form-label">Password</label>
-        <input type="password" v-model="passInput" class="form-control"/>
+        <input type="password" v-model="password" class="form-control"/>
       </div>
-      <button type="submit" class="btn btn-success">Log In</button>
+      <button type="submit" class="btn btn-primary">Log In</button>
       <div class="text-danger my-2" v-if="loginError">{{loginError}}</div>
     </form>
-    
+
     <a href="owner-dashboard.html" class="btn btn-outline-primary me-2">Owner Dashboard</a>
     <a href="walker-dashboard.html" class="btn btn-outline-success">Walker Dashboard</a>
   </div>
