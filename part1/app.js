@@ -66,7 +66,8 @@ app.get('/api/walkrequests/open', async(req,res) => {
         const connection = await mysql.createConnection(dbConfig);
         const [rows] = await connection.excute(`
             SELECT r.request_id, d.name AS dog_name, r.requested_time, r.duration_minutes, r.location, u.username AS owner_username
-            FROM WAL`);
+            FROM WalkRequests r
+            JOIN Dogs d ON r.dog_id = d.`);
         await connection.end();
         res.json(rows);
     } catch (error){
