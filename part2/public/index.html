@@ -13,17 +13,17 @@
     <h1 class="mb-4 text-primary">Welcome to the Dog Walking Service!</h1>
 
     <!--Login-->
-    <form @submit prevent="login" class="pb-4">
+    <form @submit prevent="login" class="pb-3">
       <div class ="mb-3">
         <label class ="form-label">Username</label>
-        <input v-model="username" class = "form-control"/>
+        <input v-model="userInput" class = "form-control"/>
       </div>
       <div class="mb-3">
         <label class="form-label">Password</label>
         <input type="password" v-model="password" class="form-control"/>
       </div>
       <button type="submit" class="btn btn-primary">Log In</button>
-      <div class="text-danger mt-2" v-if="error">{{error}}</div>
+      <div class="text-danger my-2" v-if="loginError">{{loginError}}</div>
     </form>
 
     <a href="owner-dashboard.html" class="btn btn-outline-primary me-2">Owner Dashboard</a>
@@ -39,24 +39,22 @@
         };
       }
     }).mount('#app');
-
-    // login method
+    // Login
     methods:{
-      async login({})
-      this.error='';
+      this.loginError='';
       try{
-        const res=await fetch('api/users/login', {
+        const response=await fetch('api/users/login', {
           method: 'POST',
           headers: {
             'Content-Type':'application/json'
           },
           credentials: 'include',
           body:JSON.stringify({
-            username:this.username,
-            password:this.password
+            username:this.userInput,
+            password:this.passInput
           })
         });
-        if(!res.ok){
+        if(!response.ok){
           this.loginError='Incorrect credentials';
           return;
         }
