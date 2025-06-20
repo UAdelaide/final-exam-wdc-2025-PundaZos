@@ -23,7 +23,9 @@ async function initializeDatabase(){
         await connection.excute('DELETE FROM Users');
 
         await connection.excute(`
-            INSERT INTO Users (username, email, password_has)`)
+            INSERT INTO Users (username, email, password_hash, role)
+            VALUES
+            ('alice123')`)
         await connection.excute(`
             INSERT INTO Dogs (owner_id, name, size)
             VALUES
