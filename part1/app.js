@@ -38,5 +38,7 @@ async function initializeDatabase(){
             VALUES
             ((SELECT dog_id FROM Dogs WHERE name = 'Max'), '2025-06-10 08:00:00', 30, 'Parklands', 'open'),
             ((SELECT dog_id FROM Dogs WHERE name = 'Bella'), '2025-06-10 09:30:00', 45, 'Beachside Ave', 'accepted'),`)
+        await connection.end();
+        console.log('Databse ini')
     }
 }
