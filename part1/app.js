@@ -54,6 +54,7 @@ app.get('/api/dogs', async(req,res)=>{
             FROM Dogs d
             JOIN Users uON d.owner_id = u.user_id`);
         await connection.end();
-        res.
+        res.json(rows);
+    } catch (error){}
     }
 });
