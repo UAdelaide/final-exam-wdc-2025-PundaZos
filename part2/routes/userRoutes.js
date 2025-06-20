@@ -53,7 +53,7 @@ router.post('/login',async (req,res) => {
       username:rows[0].username,
       role:rows[0].role
     };
-    res.json
+    res.json(req.session.user); //this one sends back to fornt end
   }
 })
 
