@@ -38,7 +38,7 @@
 
   <script>
     const { createApp, ref, onMounted } = Vue;
-    async function getCurrentUser() {
+    async function getCurUser() {
       const res = await fetch('/api/users/me')
       if (!res.ok) return null;
       return await res.json();
@@ -63,7 +63,7 @@
 
         async function applyToWalk(requestId) {
           try {
-            const user = await getCurrentUser();
+            const user = await getCurUser();
             if (!user) throw new Error('please login')
             const res = await fetch(`/api/walks/${requestId}/apply`, {
               method: 'POST',
