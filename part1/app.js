@@ -17,7 +17,6 @@ async function initializeDatabase() {
   const connection = await mysql.createConnection(dbConfig);
 
   try {
-    // Clear and insert basic test data (safe for dev only)
     await connection.execute('DELETE FROM WalkRatings');
     await connection.execute('DELETE FROM WalkApplications');
     await connection.execute('DELETE FROM WalkRequests');
@@ -53,7 +52,7 @@ async function initializeDatabase() {
   }
 }
 
-// Route: /api/dogs
+// api/dogs
 app.get('/api/dogs', async (req, res) => {
   try {
     const connection = await mysql.createConnection(dbConfig);
@@ -69,7 +68,7 @@ app.get('/api/dogs', async (req, res) => {
   }
 });
 
-// Route: /api/walkrequests/open
+// api/walkrequests/open
 app.get('/api/walkrequests/open', async (req, res) => {
   try {
     const connection = await mysql.createConnection(dbConfig);
