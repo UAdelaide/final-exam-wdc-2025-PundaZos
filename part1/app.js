@@ -89,7 +89,8 @@ app.get('/api/walkers/summary', async(req,res) => {
             (
                 SELECT COUNT(*)
                 FROM WalkRequests wr
-                JOIN WalkApplication)`);
+                JOIN WalkApplications wa ON wr.request_id = wa.request_id
+                WHERE wa.walker)`);
         await connection.end();
         res.json(rows);
     } catch (error){
