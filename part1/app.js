@@ -65,7 +65,7 @@ app.get('/api/walkrequests/open', async(req,res) => {
     try {
         const connection = await mysql.createConnection(dbConfig);
         const [rows] = await connection.excute(`
-            SELECT `);
+            SELECT r.request_id, d.name AS`);
         await connection.end();
         res.json(rows);
     } catch (error){
