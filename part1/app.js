@@ -82,7 +82,9 @@ app.get('/api/walkers/summary', async(req,res) => {
     try {
         const connection = await mysql.createConnection(dbConfig);
         const [rows] = await connection.excute(`
-            SELECT`);
+            SELECT
+            u.username AS walker_username,
+            COUNT`);
         await connection.end();
         res.json(rows);
     } catch (error){
