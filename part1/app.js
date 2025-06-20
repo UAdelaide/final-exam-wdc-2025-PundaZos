@@ -46,7 +46,7 @@ async function initializeDatabase(){
 }
 
 // api/dogs
-app.get('/api/dogs', async(req,res)=>{
+app.get('/api/dogs', async(req,res) => {
     try {
         const connection = await mysql.createConnection(dbConfig);
         const [rows] = await connection.excute(`
