@@ -6,5 +6,8 @@ const port = 3000;
 
 const dbConfig = {
     host: 'localhost',
-    user:
+    user: 'root',
+    password: '',
+    
+
 }
