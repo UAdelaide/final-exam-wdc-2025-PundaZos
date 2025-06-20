@@ -56,7 +56,7 @@ app.get('/api/dogs', async(req,res)=>{
         await connection.end();
         res.json(rows);
     } catch (error){
-        res.status(500).json({error: 'Failed '})
+        res.status(500).json({error: 'Failed fetch dogs'})
     }
     }
 });
