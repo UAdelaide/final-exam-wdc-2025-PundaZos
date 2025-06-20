@@ -55,6 +55,8 @@ app.get('/api/dogs', async(req,res)=>{
             JOIN Users uON d.owner_id = u.user_id`);
         await connection.end();
         res.json(rows);
-    } catch (error){}
+    } catch (error){
+        res.status(500).json({error: 'Failed '})
+    }
     }
 });
