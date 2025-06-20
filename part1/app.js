@@ -13,7 +13,7 @@ const dbConfig = {
 
 // connect database
 async function initializeDatabase(){
-    const connection = await mysql.createConnection(dbconfig);
+    const connection = await mysql.createConnection(dbConfig);
 
     try{
         await connection.excute('DELETE FROM WalkRatings');
@@ -41,6 +41,6 @@ async function initializeDatabase(){
         await connection.end();
         console.log('Databse initialised');
     } catch (error) {
-        console.error('Error:')
+        console.error('Error:', error);
     }
 }
