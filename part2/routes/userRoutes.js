@@ -64,7 +64,11 @@ router.post('/login', async (req,red) => {
     const[result]=await db.query(query, [username,password]);
     return;
   }
-  const userRecord = result[0]
+  const userRecord = result[0];
+  req.session.user = {
+    id::userRecord.user_id,
+    
+  }
 });
 
 module.exports = router;
