@@ -102,3 +102,6 @@ app.get('/api/walkers/summary', async(req,res) => {
         res.status(500).json({error: 'Failed fetch walkers summary' });
     }
 });
+
+// start server
+app.listen(port, async)
