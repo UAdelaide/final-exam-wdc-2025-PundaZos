@@ -72,7 +72,8 @@ router.post('/login', async (req,red) => {
     username:userRecord.username,
     role:userRole.role
   };
-  res.json()
+  res.json(req.session.user);
+}
 });
 
 module.exports = router;
