@@ -53,6 +53,6 @@ app.get('/api/dogs', async(req,res)=>{
             SELECT d.name AS dog_name, d.size, u.username AS owner_username
             FROM Dogs d
             JOIN Users uON d.owner_id = u.user_id`);
-        
+        await connection
     }
 });
