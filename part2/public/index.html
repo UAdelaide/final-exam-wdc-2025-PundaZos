@@ -39,10 +39,10 @@
         };
       }
     }).mount('#app');
-    
+
     // login method
     methods:{
-      this.loginError='';
+      this.error='';
       try{
         const response=await fetch('api/users/login', {
           method: 'POST',
@@ -55,11 +55,11 @@
             password:this.passInput
           })
         });
-        if(!response.ok){
+        if(!res.ok){
           this.loginError='Incorrect credentials';
           return;
         }
-        const result=await response.json();
+        const result=await res.json();
         switch (result.role){
           case 'owner': window.location.href = '/owner-dashboard.html';
             break;
