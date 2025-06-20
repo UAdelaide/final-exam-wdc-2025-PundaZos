@@ -58,7 +58,10 @@ router.post('/login', async (req, res) => {
 //Login part
 
 router.post('/login', async (req,red) => {
-  const {username,password} = req.body
+  const {username,password} = req.body;
+  try{
+    const query = 'SELECT * FROM '
+  }
 });
 
 module.exports = router;
