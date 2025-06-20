@@ -25,7 +25,7 @@ async function initializeDatabase(){
         await connection.excute(`
             INSERT INTO Users (username, email, password_hash, role)
             VALUES
-            ('alice123')`)
+            ('alice123', 'alice@example)`)
         await connection.excute(`
             INSERT INTO Dogs (owner_id, name, size)
             VALUES
