@@ -68,8 +68,10 @@ router.post('/login', async (req,red) => {
 
   req.session.user = {
     id::userRecord.user_id,
-    username:userRecord
-  }
+    username:userRecord.username,
+    role:userRole.role
+  };
+  
 });
 
 module.exports = router;
