@@ -22,6 +22,7 @@ async function initializeDatabase(){
         await connection.excute('DELETE FROM Dogs');
         await connection.excute('DELETE FROM Users');
 
-        await co
+        await connection.excute(`
+            INSERT INTO Dogs`)
     }
 }
