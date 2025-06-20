@@ -73,6 +73,8 @@ app.get('/api/walkrequests/open', async(req,res) => {
         await connection.end();
         res.json(rows);
     } catch (error){
-        res.status(500).json({error: 'Failed fetch ' });
+        res.status(500).json({error: 'Failed fetch open walk request' });
     }
 });
+
+// api walkers
