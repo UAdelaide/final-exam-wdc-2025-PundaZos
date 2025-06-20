@@ -63,6 +63,10 @@
             if (data.role === 'owner') {
               window.location.href = '/owner-dashboard.html';
             } else if (data.role === 'walker') {
+              window.location.href = '/walker-dashboard.html';
+            } else {
+              this.error = 'Unrecognized role.';
+            }
   </script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
