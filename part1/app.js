@@ -13,5 +13,9 @@ const dbConfig = {
 
 // connect database
 async function initializeDatabase(){
-    const 
+    const connection = await mysql.createConnection(dbconfig);
+
+    try{
+        
+    }
 }
