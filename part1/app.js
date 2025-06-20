@@ -11,3 +11,5 @@ const dbConfig = {
     database: 'DogWalkService'
 };
 
+// connect database
+async function ini
