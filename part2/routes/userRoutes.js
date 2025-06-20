@@ -65,9 +65,10 @@ router.post('/login', async (req,red) => {
     return;
   }
   const userRecord = result[0];
+
   req.session.user = {
     id::userRecord.user_id,
-    
+    username:userRecord
   }
 });
 
