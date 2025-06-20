@@ -105,5 +105,6 @@ app.get('/api/walkers/summary', async(req,res) => {
 
 // start server
 app.listen(port, async() => {
-    await initializeDatabase
+    await initializeDatabase();
+    console.log()
 });
