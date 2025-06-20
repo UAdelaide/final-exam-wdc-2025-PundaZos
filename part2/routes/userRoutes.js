@@ -58,7 +58,7 @@ router.post('/login', async (req, res) => {
 //Login part
 
 router.post('/login', async (req,red) => {
-  
+  const {username,password} = req.body
 });
 
 module.exports = router;
