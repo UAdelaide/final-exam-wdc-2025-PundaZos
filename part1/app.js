@@ -68,10 +68,11 @@ app.get('/api/walkrequests/open', async(req,res) => {
             SELECT r.request_id, d.name AS dog_name, r.requested_time, r.duration_minutes, r.location, u.username AS owner_username
             FROM WalkRequests r
             JOIN Dogs d ON r.dog_id = d.dog_id
-            JOIN Users u ON d.owner_id = `);
+            JOIN Users u ON d.owner_id = u.user_id
+            WHERE r.status = 'open' `);
         await connection.end();
         res.json(rows);
     } catch (error){
-        res.status(500).json({error: 'Failed fetch dogs' });
+        res.status(500).json({error: 'Failed fetch ' });
     }
 });
