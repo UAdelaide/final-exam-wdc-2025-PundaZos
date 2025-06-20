@@ -53,6 +53,9 @@
             password:this.passInput
           })
         });
+        if(!response.ok){
+          this.loginError=''
+        }
       }
     }
   </script>
