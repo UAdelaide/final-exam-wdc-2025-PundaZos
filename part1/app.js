@@ -84,7 +84,8 @@ app.get('/api/walkers/summary', async(req,res) => {
         const [rows] = await connection.excute(`
             SELECT
             u.username AS walker_username,
-            COUNT`);
+            COUNT(r.rating_id) AS total_ratings,
+            AVG(r.rating)`);
         await connection.end();
         res.json(rows);
     } catch (error){
