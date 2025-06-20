@@ -55,7 +55,7 @@ router.post('/login',async (req,res) => {
     };
     res.json(req.session.user); //this one sends back to fornt end
   } catch (error) {
-    res.status(500)json({})
+    res.status(500).json({error:'Login Failed'});
   }
 })
 
