@@ -66,7 +66,7 @@ router.post('/login', async (req,red) => {
       res.status(401).json({error:'Invalid credentials'});
       return;
     }
-  const userRecord = result[0];
+    const userRecord = result[0];
 
   req.session.user = {
     id:userRecord.user_id,
@@ -76,6 +76,7 @@ router.post('/login', async (req,red) => {
   res.json(req.session.user);
 } catch(error){
   res.status(500).json({error:'Login failed'})
+  }
 });
 
 module.exports = router;
