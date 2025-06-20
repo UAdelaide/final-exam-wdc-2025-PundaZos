@@ -44,3 +44,6 @@ async function initializeDatabase(){
         console.error('Error:', error);
     }
 }
+
+// api/dogs
+app.get('/api/dogs')
