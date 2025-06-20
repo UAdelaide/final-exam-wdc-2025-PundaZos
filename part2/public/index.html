@@ -39,9 +39,12 @@
             credentials: 'include',
             body: JSON.stringify({
               username: this.username,
-              password: this
+              password: this.password
             })
-          })
+          });
+          if (!res.ok){
+            this.error
+          }
         }
       }
     }
