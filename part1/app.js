@@ -16,8 +16,8 @@ async function initializeDatabase(){
     const connection = await mysql.createConnection(dbconfig);
 
     try{
-        await connection.excute
-        await connection.excute
+        await connection.excute('DELETE FROM WalkRatings');
+        await connection.excute('')
         await connection.excute
         await connection.excute
         await connection.excute
