@@ -36,7 +36,9 @@ router.get('/me', (req, res) => {
 });
 
 //Login part
-router.post('/login')
+router.post('/login',async (req.res) => {
+  const {username, pa}
+})
 
 
 module.exports = router;
