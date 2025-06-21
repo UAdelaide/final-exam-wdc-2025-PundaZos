@@ -101,9 +101,10 @@
               const image = await resp.json();
               dog.photo = image.message;
             } catch {
-              dog.
+              dog.photo = '';
             }
           }
+          this.dogs
         }
       }
     }).mount('#app');
