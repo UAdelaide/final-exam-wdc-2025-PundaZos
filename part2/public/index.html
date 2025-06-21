@@ -99,7 +99,9 @@
             try {
               const resp = await fetch('https://dog.ceo/api/breeds/image/random');
               const image = await resp.json();
-              dog.photo = image.message
+              dog.photo = image.message;
+            } catch {
+              dog.
             }
           }
         }
