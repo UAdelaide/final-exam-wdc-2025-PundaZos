@@ -86,7 +86,7 @@
         const dogs = ref([]);
 
         async function loadDogs() {
-          
+          const userRes = await fetch('/api/dogs');
           const res = await fetch('/api/dogs');
           const dogs = await res.json();
           for (let dog of dogs) {
