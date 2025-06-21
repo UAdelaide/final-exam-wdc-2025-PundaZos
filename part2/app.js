@@ -28,7 +28,10 @@ app.use('/api/users', userRoutes);
 app.get('/api/dogs', async(req,res) => {
     try {
       if (req.query.owner) {
-        const [dogs]=await db.execute()
+        const [dogs]=await db.execute(`
+            SELECT dod. AS dog_name, d.size, u.username AS owner_username
+            FROM Dogs d
+            JOIN Users uON d.owner_id = u.user_id`)
       }
         const connection = await mysql.createConnection(dbConfig);
         const [rows] = await connection.excute(`
