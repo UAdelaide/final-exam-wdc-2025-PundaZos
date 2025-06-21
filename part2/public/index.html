@@ -35,9 +35,11 @@
         <th>image</th>
       </tr>
       <tr v-for="(dog,i) in dogs" :key="i">
-        <td>{{dog.dog_id\\}}</td>
-        <td>Anniy</td>
-        <td>medium</td>
+        <td>{{dog.dog_id||i+1}}</td>
+        <td>{{dog.dog_name}}</td>
+        <td>{{dog.dog_id||i+1}}</td>
+        <td>{{dog.dog_id||i+1}}</td>
+        <td>{{dog.dog_id||i+1}}</td>
       </tr>
     </table>
     <!-- Dashboard Links -->
