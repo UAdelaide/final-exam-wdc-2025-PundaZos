@@ -94,7 +94,8 @@
         },
         async loadDogs() {
           const res = await fetch('/api/dogs');
-          const dogs = await res.
+          const dogs = await res.json();
+          for let dog
         }
       }
     }).mount('#app');
