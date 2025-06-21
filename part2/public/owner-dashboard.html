@@ -89,15 +89,9 @@
           const userRes = await fetch('/api/users/me');
           const user = await userRes.json();
           const res = await fetch('/api/dogs?owner=' +user.username);
-          dog.vale = await res.json();
-          for (let dog of dogs) {
-            try {
-              const resp = await fetch('https://dog.ceo/api/breeds/image/random');
-              const image = await resp.json();
-              dog.photo = image.message;
-            } catch {
-              dog.photo = '';
-            }
+          dog.value = await res.json();
+          catch {
+            dog.value = []
           }
           this.dogs = dogs;
         }
