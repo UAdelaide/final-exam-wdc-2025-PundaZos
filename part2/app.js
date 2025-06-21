@@ -32,15 +32,13 @@ app.get('/api/dogs', async(req,res) => {
             SELECT dog_id, name FROM Dogs d
             JOIN Users u ON d.owner_id = u.user_id WHERE u.username = ?`, [req.query.owner])
       } else {
-        const [rows] = await connection.excute(`
+        const [dogs] = await db.excute(`
             SELECT d.name AS dog_name, d.size, u.username AS owner_username
             FROM Dogs d
             JOIN Users uON d.owner_id = u.user_id`);
         await connection.end();
         res.json(rows);
       }
-        const connection = await mysql.createConnection(dbConfig);
-
     } catch (error){
         res.status(500).json({error: 'Failed fetch dogs' });
     }
