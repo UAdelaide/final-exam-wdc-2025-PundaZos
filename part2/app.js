@@ -29,8 +29,7 @@ app.get('/api/dogs', async(req,res) => {
     try {
       if (req.query.owner) {
         const [dogs]=await db.execute(`
-            SELECT dog_id, name FROM AS dog_name, d.size, u.username AS owner_username
-            FROM Dogs d
+            SELECT dog_id, name FROM Dogs d
             JOIN Users uON d.owner_id = u.user_id`)
       }
         const connection = await mysql.createConnection(dbConfig);
