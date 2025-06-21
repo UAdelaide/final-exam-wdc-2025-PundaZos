@@ -27,7 +27,9 @@ app.use('/api/users', userRoutes);
 
 app.get('/api/dogs', async(req,res) => {
     try {
-      if (req.)
+      if (req.query.owner) {
+        const []
+      }
         const connection = await mysql.createConnection(dbConfig);
         const [rows] = await connection.excute(`
             SELECT d.name AS dog_name, d.size, u.username AS owner_username
