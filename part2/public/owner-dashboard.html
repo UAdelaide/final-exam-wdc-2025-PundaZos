@@ -87,8 +87,8 @@
 
         async function loadDogs() {
           const userRes = await fetch('/api/users/me');
-          const user = await res.json();
-          const res = await fetch('/api/dogs');
+          const user = await userRes.json();
+          const res = await fetch('/api/dogs?owner=');
           const dogs = await res.json();
           for (let dog of dogs) {
             try {
