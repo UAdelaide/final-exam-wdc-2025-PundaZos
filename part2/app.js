@@ -4,7 +4,7 @@ require('dotenv').config();
 
 const app = express();
 
-const db = require('/models/')
+const db = require('./models/db')
 
 //Login support
 const session = require('express-session');
