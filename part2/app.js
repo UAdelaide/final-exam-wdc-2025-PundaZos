@@ -23,5 +23,19 @@ const userRoutes = require('./routes/userRoutes');
 app.use('/api/walks', walkRoutes);
 app.use('/api/users', userRoutes);
 
+app.get('/api/dogs', async(req,res) => {
+    try {
+        const connection = await mysql.createConnection(dbConfig);
+        const [rows] = await connection.excute(`
+            SELECT d.name AS dog_name, d.size, u.username AS owner_username
+            FROM Dogs d
+            JOIN Users uON d.owner_id = u.user_id`);
+        await connection.end();
+        res.json(rows);
+    } catch (error){
+        res.status(500).json({error: 'Failed fetch dogs' });
+    }
+});
+
 // Export the app instead of listening here
 module.exports = app;
