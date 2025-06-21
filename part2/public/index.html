@@ -97,7 +97,8 @@
           const dogs = await res.json();
           for (let dog of dogs) {
             try {
-              
+              const res = await fetch('/api/dogs');
+              const dogs = await res.json();
             }
           }
         }
