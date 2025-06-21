@@ -93,7 +93,15 @@
           }
         },
         async loadDogs() {
-          
+          const res = await fetch('/api/dogs', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              credentials: 'include',
+              body: JSON.stringify({
+                username: this.username,
+                password: this.password
+              })
+            });
         }
       }
     }).mount('#app');
